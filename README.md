@@ -37,6 +37,7 @@ profile = {
     "languages":  ["Python", "SQL" ,"Advanced Excel"],
     "open_to":    "Senior DS / Lead DS / ML Engineer roles",
 }
+```
 ---
 
 ## 🛠️ Tech Stack
