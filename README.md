@@ -37,43 +37,6 @@ profile = {
     "languages":  ["Python", "SQL" ,"Advanced Excel"],
     "open_to":    "Senior DS / Lead DS / ML Engineer roles",
 }
-```
-
----
-
-## 🔬 Featured Projects
-
-### 🧬 [VCF Variant Annotation Pipeline](https://github.com/YOUR_USERNAME/vcf-variant-annotation-pipeline)
-> Automated parser that extracts genes and rsIDs from patient VCF files, filters by user-defined medical conditions at runtime, and outputs **interactive HTML clinical reports** with risk charts.
-
-- **32 conditions** · **ClinVar / dbSNP / HPO** integration · zero external bioinformatics tools
-- Risk tiering (Pathogenic → High, Likely Pathogenic → Moderate, Risk Factor → Low)
-- 28 unit tests · CLI with `--conditions`, `--include-benign`, `--patient-id` flags
-
-`Python` `pandas` `Plotly` `ClinVar` `VCF`
-
----
-
-### 🕸️ [HPO Gene–Phenotype Knowledge Graph](https://github.com/YOUR_USERNAME/hpo-knowledge-graph)
-> **NetworkX** knowledge graph linking **96 genes → 108 gene-disease associations → 32 HPO-annotated conditions**. Fully interactive force-directed HTML visualisation via Pyvis.
-
-- Discovers **pleiotropic genes** (PTPN22, APOE, PCSK9…) bridging multiple diseases
-- CLI: gene query, shortest-path between genes, condition filter
-- Outputs: interactive network, degree distribution, pleiotropy chart, category pie, CSV summaries
-
-`NetworkX` `Pyvis` `Plotly` `HPO` `OMIM` `ClinVar`
-
----
-
-### 📊 [Gene–Disease Association Explorer](https://github.com/YOUR_USERNAME/gene-disease-explorer)
-> **Streamlit + Gradio** interactive dashboard for exploring gene–rsID relationships in Type 2 Diabetes and CAD. 5 chart types, sidebar filters, live variant detail table.
-
-- Network graph · Bubble chart (OR vs AF) · Heatmap · Bar charts · Manhattan plot
-- 30 curated variants from **ClinVar + GWAS Catalog** (all literature-validated)
-- HuggingFace Spaces deployable via Gradio
-
-`Streamlit` `Gradio` `Plotly` `NetworkX` `GWAS Catalog`
-
 ---
 
 ## 🛠️ Tech Stack
