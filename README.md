@@ -8,7 +8,7 @@
 # 🧬 Rayala Madhu Bhanu Varma
 
 **Lead Data Scientist &nbsp;·&nbsp; Healthcare Genomics &nbsp;·&nbsp; Generative AI**  
-*Hyderabad, India
+*Hyderabad, India*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/rayala-madhu-bhanu-varma)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:madhu.themaestro@gmail.com)
