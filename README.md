@@ -13,7 +13,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/rayala-madhu-bhanu-varma)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:madhu.themaestro@gmail.com)
 [![IIIT-H](https://img.shields.io/badge/M.S.%20Data%20Science-IIIT%20Hyderabad-6366F1?style=flat)](https://iiit.ac.in)
-![Profile views](https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&color=378ADD&style=flat)
+![Profile views](https://komarev.com/ghpvc/?username=rayala43&color=378ADD&style=flat)
 
 </div>
 
