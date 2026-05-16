@@ -1,140 +1,170 @@
-# RAYALA-MADHU-BHANU-VARMA
-# Installing Keras
-# conda install keras
+<div align="center">
 
-# importing the libraries
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
+<!-- Animated DNA header -->
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&pause=1200&color=378ADD&center=true&vCenter=true&width=500&lines=Lead+Data+Scientist+%F0%9F%A7%AC;Clinical+Genomics+Engineer;Generative+AI+Builder;M.S.+Data+Science+%C2%B7+IIIT+Hyderabad;Gene%E2%80%93Disease+Explorer" alt="Typing animation" />
 
-# Loading the data
-# dataset = pd.read_csv('../sonar-data/sonar.csv', header = None)
-dataset = pd.read_csv('sonar.csv', header = None)
+<br/>
 
-X = dataset.iloc[:, 0:60].values
-y = dataset.iloc[:, 60].values
+# 🧬 Rayala Madhu Bhanu Varma
 
-# Feature Encoding
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
-encoder = LabelEncoder()
-y = encoder.fit_transform(y)
+**Lead Data Scientist &nbsp;·&nbsp; Healthcare Genomics &nbsp;·&nbsp; Generative AI**  
+*Hyderabad, India
 
-# Splitting into training and test sets
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/rayala-madhu-bhanu-varma)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:madhu.themaestro@gmail.com)
+[![IIIT-H](https://img.shields.io/badge/M.S.%20Data%20Science-IIIT%20Hyderabad-6366F1?style=flat)](https://iiit.ac.in)
+![Profile views](https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&color=378ADD&style=flat)
 
-# Feature Scaling
-from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
-X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)
+</div>
 
-# Building an ANN
-# Importing Keras Libraries and packages
-import keras 
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import Dropout
+---
 
-# Initialize the ANN
-classifier = Sequential()
+## 👋 About me
 
-# Build the input and hidden layers with dropout
-classifier.add(Dense(units = 32, activation = 'relu', kernel_initializer = 'uniform', input_dim = 60))
-classifier.add(Dropout(rate = 0.1))
+> *"Turning raw genomic data into clinical intelligence — one variant at a time."*
 
-# Adding the second hidden layer
-classifier.add(Dense(units = 32, activation = 'relu', kernel_initializer = 'uniform'))
-classifier.add(Dropout(rate = 0.1))
+Lead Data Scientist with **5+ years** of end-to-end experience in **healthcare genomics**, **machine learning**, and **generative AI**. I build pipelines that parse patient VCF files, annotate variants against ClinVar and HPO databases, and produce interactive clinical reports used in real medical research.
 
-# Adding an output layer
-classifier.add(Dense(units = 1, kernel_initializer = 'uniform', activation = 'sigmoid'))
+Currently pursuing an **M.S. in Data Science at IIIT Hyderabad** while leading the data science team at **GenepoweRx**, where I've processed gene-disease associations across 32 medical conditions for personalised clinical reports.
 
-# Compiling the ANN
-classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+```python
+profile = {
+    "role":       "Lead Data Scientist",
+    "company":    "GenepoweRx (K&H Personalized Clinical Research)",
+    "education":  "M.S. Data Science — IIIT Hyderabad (2025–present)",
+    "location":   "Hyderabad, India",
+    "domains":    ["Clinical Genomics", "Generative AI", "NLP", "MLOps"],
+    "languages":  ["Python", "SQL" ,"Advanced Excel"],
+    "open_to":    "Senior DS / Lead DS / ML Engineer roles",
+}
+```
 
-# Fitting ANN to training set
-history = classifier.fit(X_train, y_train, validation_split = 0.33, batch_size = 10, epochs = 100)
+---
 
-# Predicting on test set
-y_pred = classifier.predict(X_test) > 0.5
+## 🔬 Featured Projects
 
-# Evaluating using confusion matrix
-from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(y_test, y_pred)
+### 🧬 [VCF Variant Annotation Pipeline](https://github.com/YOUR_USERNAME/vcf-variant-annotation-pipeline)
+> Automated parser that extracts genes and rsIDs from patient VCF files, filters by user-defined medical conditions at runtime, and outputs **interactive HTML clinical reports** with risk charts.
 
-# Listing all the data in training history
-print(history.history.keys())
+- **32 conditions** · **ClinVar / dbSNP / HPO** integration · zero external bioinformatics tools
+- Risk tiering (Pathogenic → High, Likely Pathogenic → Moderate, Risk Factor → Low)
+- 28 unit tests · CLI with `--conditions`, `--include-benign`, `--patient-id` flags
 
-# Visualizing the loss updates with the number of epochs
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
-plt.title('Training Loss vs Epochs')
-plt.ylabel('Training Loss')
-plt.xlabel('Number of Epochs')
-plt.legend(['train', 'validation'], loc='upper left')
-plt.show()
+`Python` `pandas` `Plotly` `ClinVar` `VCF`
 
-# Visualizing the accuracy updates with the number of epochs
-plt.plot(history.history['acc'])
-plt.plot(history.history['val_acc'])
-plt.title('Training Accuracy vs Epochs')
-plt.ylabel('Training Accuracy')
-plt.xlabel('Number of Epochs')
-plt.legend(['train', 'validation'], loc='upper left')
-plt.show()
+---
 
-# Evaluating, Improving and Tuning the ANN
+### 🕸️ [HPO Gene–Phenotype Knowledge Graph](https://github.com/YOUR_USERNAME/hpo-knowledge-graph)
+> **NetworkX** knowledge graph linking **96 genes → 108 gene-disease associations → 32 HPO-annotated conditions**. Fully interactive force-directed HTML visualisation via Pyvis.
 
-# Evaluating the ANN
-from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import StratifiedKFold
-from keras.models import Sequential
-from keras.layers import Dense
-def build_classifier():
-    classifier = Sequential()
-    classifier.add(Dense(units = 32, kernel_initializer = 'uniform', activation = 'relu', input_dim = 60))
-    classifier.add(Dense(units = 32, kernel_initializer = 'uniform', activation = 'relu'))
-    classifier.add(Dense(units = 1, kernel_initializer = 'uniform', activation = 'sigmoid'))
-    classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
-    return classifier
-classifier = KerasClassifier(build_fn = build_classifier, batch_size = 10, epochs = 15)
-kfold = StratifiedKFold(n_splits=10, shuffle=True, random_state=7)
-accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = kfold)
-print(accuracies)
-mean = accuracies.mean()
-print(mean)
-variance = accuracies.std()
-print(variance)
+- Discovers **pleiotropic genes** (PTPN22, APOE, PCSK9…) bridging multiple diseases
+- CLI: gene query, shortest-path between genes, condition filter
+- Outputs: interactive network, degree distribution, pleiotropy chart, category pie, CSV summaries
 
-# Improving the ANN
-# Dropout Regularization to reduce overfitting if needed
+`NetworkX` `Pyvis` `Plotly` `HPO` `OMIM` `ClinVar`
 
-# Tuning the ANN
-from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.model_selection import GridSearchCV
-from keras.models import Sequential
-from keras.layers import Dense
-def build_classifier(optimizer):
-    classifier = Sequential()
-    classifier.add(Dense(units = 32, kernel_initializer = 'uniform', activation = 'relu', input_dim = 60))
-    classifier.add(Dense(units = 32, kernel_initializer = 'uniform', activation = 'relu'))
-    classifier.add(Dense(units = 1, kernel_initializer = 'uniform', activation = 'sigmoid'))
-    classifier.compile(optimizer = optimizer, loss = 'binary_crossentropy', metrics = ['accuracy'])
-    return classifier
-classifier = KerasClassifier(build_fn = build_classifier)
-parameters = {'batch_size': [10, 25, 32],
-              'epochs': [15, 20],
-              'optimizer': ['adam', 'rmsprop']}
-grid_search = GridSearchCV(estimator = classifier,
-                           param_grid = parameters,
-                           scoring = 'accuracy',
-                           cv = 10)
-grid_search = grid_search.fit(X_train, y_train)    
-best_parameters = grid_search.best_params_
-best_accuracy = grid_search.best_score_
-print(best_parameters)
-# {'batch_size': 10, 'epochs': 100, 'optimizer': 'rmsprop'}
-print(best_accuracy)
-# 0.8653846153846154
+---
+
+### 📊 [Gene–Disease Association Explorer](https://github.com/YOUR_USERNAME/gene-disease-explorer)
+> **Streamlit + Gradio** interactive dashboard for exploring gene–rsID relationships in Type 2 Diabetes and CAD. 5 chart types, sidebar filters, live variant detail table.
+
+- Network graph · Bubble chart (OR vs AF) · Heatmap · Bar charts · Manhattan plot
+- 30 curated variants from **ClinVar + GWAS Catalog** (all literature-validated)
+- HuggingFace Spaces deployable via Gradio
+
+`Streamlit` `Gradio` `Plotly` `NetworkX` `GWAS Catalog`
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+**Machine Learning & AI**  
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikitlearn&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-189AB4?style=flat&logoColor=white)
+
+**Generative AI & NLP**  
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat&logo=langchain&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=flat&logo=huggingface&logoColor=black)
+![NLTK](https://img.shields.io/badge/NLTK-4CAF50?style=flat&logoColor=white)
+
+**Data & Databases**  
+![pandas](https://img.shields.io/badge/pandas-150458?style=flat&logo=pandas&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Spark-E25A1C?style=flat&logo=apachespark&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+
+**Visualisation & Dashboards**  
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+![Gradio](https://img.shields.io/badge/Gradio-F97316?style=flat&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat&logo=plotly&logoColor=white)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat&logo=tableau&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)
+
+**Bioinformatics**  
+![ClinVar](https://img.shields.io/badge/ClinVar-1F4E79?style=flat&logoColor=white)
+![HPO](https://img.shields.io/badge/HPO-1D9E75?style=flat&logoColor=white)
+![VCF](https://img.shields.io/badge/VCF%20Parsing-3B82F6?style=flat&logoColor=white)
+![GWAS](https://img.shields.io/badge/GWAS%20Catalog-7F77DD?style=flat&logoColor=white)
+
+</div>
+
+---
+
+## 💼 Experience Timeline
+
+```
+2025 Sep – Present  │  Lead Data Scientist · GenepoweRx
+                    │  ► Generative AI pipelines for clinical variant interpretation
+                    │  ► Leading data science team, MLOps, strategy
+                    │
+2024 Oct – 2025 Aug │  Senior Data Scientist · GenepoweRx
+                    │  ► Diabetes & CAD genetic risk scoring models
+                    │  ► Nutrigenomics NLP pipelines
+                    │
+2023 Mar – 2024 Nov │  Data Scientist · GenepoweRx
+                    │  ► VCF file processing across 32 medical conditions
+                    │  ► ClinVar submissions via Python (dbSNP JSON schema)
+                    │  ► HPO gene catalog automation (70% time reduction)
+                    │
+2022 Dec – 2023 Feb │  Data Scientist Intern · GenepoweRx
+                    │
+2021 May – 2022 Dec │  Senior Operations Executive & Data Analyst · Fuelkart.com
+                    │  ► ML model for fuel theft & refill prediction
+                    │
+2025 Nov – Present  │  M.S. Data Science · IIIT Hyderabad
+```
+
+---
+
+## 📚 Certifications
+
+- 🎓 **M.S. Data Science** — IIIT Hyderabad *(2025 – present)*
+- 📜 **Data Science & AI** — Analytics Path, Hyderabad *(2019 – 2020)*
+- ☁️ **Capstone:** Machine Learning · Deep Learning · Microsoft Azure · Tableau
+- 🐍 **Python Proficiency** — Cutshort
+- 🤖 **ML Proficiency** — Cutshort
+
+
+---
+
+<div align="center">
+
+**Let's connect and build something great in genomics and AI** 🧬
+
+[![LinkedIn](https://img.shields.io/badge/Connect%20on%20LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rayala-madhu-bhanu-varma)
+&nbsp;
+[![Email](https://img.shields.io/badge/Send%20an%20Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:madhu.themaestro@gmail.com)
+
+<br/>
+
+*"Data is the new genome — and I'm here to sequence it."*
+
+![Wave](https://capsule-render.vercel.app/api?type=waving&color=378ADD&height=80&section=footer)
+
+</div>
