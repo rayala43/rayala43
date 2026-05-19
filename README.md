@@ -14,6 +14,8 @@
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:madhu.themaestro@gmail.com)
 [![IIIT-H](https://img.shields.io/badge/M.S.%20Data%20Science-IIIT%20Hyderabad-6366F1?style=flat)](https://iiit.ac.in)
 ![Profile views](https://komarev.com/ghpvc/?username=rayala43&color=378ADD&style=flat)
+[![Portfolio](https://img.shields.io/badge/Portfolio-rayala43.github.io-00d2a0?style=flat&logo=github&logoColor=white)](https://rayala43.github.io/)
+ 
 
 </div>
 
